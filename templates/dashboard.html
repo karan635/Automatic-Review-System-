@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Review Auto Reply</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<h2>College Review Auto-Reply System (Selenium)</h2>
+
+<form method="post" action="/scrape">
+    <button type="submit">Scrape & Generate Replies</button>
+</form>
+
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Review</th>
+        <th>Sentiment</th>
+        <th>Auto Reply</th>
+    </tr>
+
+    {% for r in reviews %}
+    <tr>
+        <td>{{ r.id }}</td>
+        <td>{{ r.review }}</td>
+        <td>{{ r.sentiment }}</td>
+        <td>{{ r.reply }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+</body>
+</html>
